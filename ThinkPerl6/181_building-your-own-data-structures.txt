@@ -1,0 +1,10 @@
+Building Your Own Data Structures
+
+Perl has a number of compound types such as arrays and hashes that you can com‐
+bine to construct arrays of arrays, arrays of hashes, hashes of arrays, hashes of hashes,
+arrays of arrays of arrays or hashes, and so on, and this is usually sufficient for most
+needs. Sometimes, however, you need something very specific that is not built in.
+Over the years, computer science has studied and used scores of specific data struc‐
+tures such as linked lists, stacks, queues, circular lists, trees of numerous kinds, etc.
+We will briefly study a couple of them.
+

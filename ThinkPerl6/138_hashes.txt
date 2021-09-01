@@ -1,0 +1,8 @@
+CHAPTER 10
+
+Hashes
+
+This chapter presents another built-in type called a hash. Hashes are one of Perl’s best
+and most commonly used features; they are the building blocks of many efficient and
+elegant algorithms.
+

@@ -1,0 +1,12 @@
+CHAPTER 8
+
+Case Study: Word Play
+
+This chapter is intended to let you practice and consolidate the knowledge you have
+acquired so far, rather than introducing new concepts. To help you gain experience
+with programming, we will cover a case study that involves solving word puzzles by
+searching for words that have certain properties. For example, we’ll find the longest
+palindromes in English and search for words whose letters appear in alphabetical
+order. And I will present another program development plan: reduction to a previ‐
+ously solved problem.
+

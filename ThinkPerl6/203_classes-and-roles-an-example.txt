@@ -1,0 +1,92 @@
+Classes and Roles: An Example
+
+Let’s come back to vertebrates, mammals and dogs. A dog is a mammal and inherits
+some characteristics from the mammals, such as having a neocortex (a region of the
+brain), hair, and mammary glands, as well as a vertebral column, which all mammals
+(along with fishes, birds, reptiles, and others) inherit from vertebrates. So far, the
+class hierarchy seems simple and natural.
+But dogs can have very different characteristics and behaviors. To quote the Wikipe‐
+dia article on dogs: “Dogs perform many roles for people, such as hunting, herding,
+pulling loads, protection, assisting police and military, companionship and, more
+recently, aiding handicapped individuals” (italic emphasis added). Dogs can also be
+feral animals (i.e., animals living in the wild but descended from domesticated indi‐
+viduals) or stray dogs. All these additional behaviors might be added to the dog class.
+Similarly, a cat, another mammal, may also be a pet or a feral animal. Mustangs, free-
+roaming North American horses, are also feral animals, descended from once-
+domesticated horses; but a mustang may also be captured and brought back to
+domesticated state. This return to the wild of feral animals is not limited to mammals:
+pigeons living in our cities are often descended from once-domesticated homing
+pigeons used in the past. It can even happen with invertebrates, such as swarms of
+honeybees.
+
+It is apparent that a hierarchical modeling of inheritance trees is not adapted to
+describe such behaviors.
+We can define classes for dogs, cats, and horses as subclasses of mammals (which
+itself inherits from vertebrates). Besides that, we define roles for pet or feral animals.
+In addition, we can create new classes subclassing the dog, horse, and cat classes and
+doing some specific roles; or we can assign roles to individual instances of a class.
+This could look like this (this is a dummy example that cannot be tested):
+
+class Vertebrate { method speak {say "vertebrate"};}
+class Mammal is Vertebrate { method speak { say "mammal" } }
+class Bird is Vertebrate { method fly {} }
+class
+Dog is Mammal { method bark {} }
+class Horse is Mammal { method neigh {} }
+class Cat is Mammal { method meow {} }
+class Mouse is Mammal { method squeek {} }
+
+class Duck is Bird { method quack {} }
+# ...
+
+role Pet-animal {
+    method is-companion() {...}
+    # other methods
+}
+role Shepherd { ... } # sheep keeper
+role Feral { ... } # animal back to wild life
+role Guide { ... } # blind guide
+role Human-like { ... } # animal behaving like a human
+# ...
+
+class Guide-dog is Dog does Guide { ...  }
+class Shepherd-dog is Dog does Shepherd { ...  }
+class Stray-dog is Dog does Feral { ...  }
+class Pet-cat is Cat does Pet-animal { ...  }
+class Feral-cat is Cat does Feral { ...  }
+class Mustang is Horse does Feral { ...  }
+class Domestic-canary is Bird does Pet-animal { ...  }
+# ...
+
+# Role can also be applied to instances:
+my $garfield = Pet-cat.new(...);
+my $mickey = Mouse.new(...);
+$mickey does Human-like;
+my $donald = Duck.new(...);
+$donald does Human-like;
+my $pluto = Dog.new(...);
+$pluto does Pet-animal;
+my $snoopy = Dog.new(...);
+$snoopy does Pet-animal does Human-like;
+
+A role is applied to a class or an object with the does trait (as opposed to is for inher‐
+itance). These different keywords reflect the semantic difference associated to them:
+composing a role into a class or an object provides this class or object with the supple‐
+mentary behavior associated with the role, but it does not follow that the object
+receiving the role is the same thing as or of the same nature as the role.
+
+If the Pet-animal and feral roles had been defined as classes, then the Pet-cat and
+Feral-cat classes would have undergone double inheritance, with the potential
+problems associated with that. By applying a role to a class, you avoid constructing a
+multiple-inheritance tree that is probably not really justified and can be complicated
+to conceptualize and difficult to maintain. Judicious use of classes and roles can lead
+to a model that is simpler, more natural, and closer to the real relations between the
+entities and behaviors under scrutiny.
+
+In addition, if you inadvertently compose several roles with two methods having the
+same name, this immediately raises an error (unless a method of the same name
+exists within the class, in which case it prevails), rather than dispatching silently to
+one of the two methods as in the case of multiple inheritance. In that case, naming
+conflicts are identified immediately (at compile time), which has the benefit of imme‐
+diately finding a bug that might otherwise go unseen for a while.
+

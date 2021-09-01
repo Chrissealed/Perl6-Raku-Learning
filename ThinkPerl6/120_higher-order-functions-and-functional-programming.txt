@@ -1,0 +1,36 @@
+Higher-Order Functions and Functional Programming
+
+Besides their immediate usefulness, the reduce, map, and grep functions we have
+been using here do something qualitatively new. The arguments to these functions
+are not just data: their first argument is a code block or a function. We are not only
+passing to them the data that they will have to use or transform, but we are also pass‐
+ing the code that will process the data.
+
+The reduce, map, and grep functions are what are often called higher-order functions,
+functions that manipulate not only data, but also other functions. These functions
+can be thought of as generic abstract functions—they perform a purely technical
+operation: process the elements of a list and apply to each of them a behavior defined
+in the code block or the function of the first parameter.
+
+These ideas are to a large extent rooted in functional programming, a programming
+paradigm that is very different from what we have seen so far and that has been
+implemented historically in languages such as Lisp, Caml, Ocaml, Scheme, Erlang, or
+Haskell. Perl 6 is not a functional programming language in the same sense as these
+languages, because it can also use other programming paradigms, but it has incorpo‐
+rated most of their useful features, so that you can use the expressive power and
+inherent safety of this programming model without being forced to do so if and when
+you would prefer a different model, and without having to learn a totally new syntax
+that may sometimes look somewhat abstruse or even clunky.
+
+This is immensely useful and can give you an incredible expressive power for solving
+certain types of problems. But other types of problems might be better solved with
+the more “traditional” procedural or imperative programming model, while others
+may benefit from an object-oriented approach. Perl 6 lets you choose the program‐
+ming model you want to use, and even makes it possible to seamlessly combine sev‐
+eral of them in the same program.
+
+Functional programming is so important in my opinion that a full chapter of this
+book will be devoted to the functional programming features of Perl (see Chapter 14).
+Before that, make sure to read “Encapsulating the data” on page 382 in the array and
+list section of the appendix.
+

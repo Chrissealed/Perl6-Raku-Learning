@@ -1,0 +1,69 @@
+Debugging
+
+When a syntax or runtime error occurs, the error message contains a lot of informa‐
+tion, but it can be overwhelming. The most useful parts are usually:
+• What kind of error it was
+• Where it occurred
+Syntax errors are usually easy to find, but there are a few gotchas. In general, error
+messages indicate where the problem was discovered, but the actual error might be
+earlier in the code, sometimes on a previous line or even many lines before.
+For example, the goal of the following code was to display the multiplication tables:
+
+sub multiplication-tables {
+    for 1..10 -> $x {
+        for 1..10 -> $y {
+        say "$x x $y\t= ", $x * $y;
+        say "";
+    }
+}
+
+multiplication-tables();
+
+It failed at compilation with the following error:
+$ perl6 mult_table.pl6
+===SORRY!=== Error while compiling /home/Laurent/mult_table.pl6
+Missing block (taken by some undeclared routine?)
+at /home/Laurent/mult_table.pl6:9
+------> multiplication-tables();<HERE><EOL>
+The error message reports an error on line 9 of the program (the last line of the
+code), at the end of the line, but the actual error is a missing closing brace after line 4
+and before line 5. The reason for this is that while the programmer made the mistake
+on line 4, the Perl interpreter could not detect this error before it reached the end of
+the program. The correct program for displaying multiplication tables might be:
+
+sub multiplication-tables {
+    for 1..10 -> $x {
+        for 1..10 -> $y {
+        say "$x x $y\t= ", $x * $y;
+        }
+        say "";
+    }
+}
+
+multiplication-tables();
+
+When an error is reported on the last line of a program, it is quite commonly due to a
+missing closing parenthesis, bracket, brace, or quotation mark several lines earlier. An
+editor with syntax highlighting can sometimes help you.
+The same is true of runtime errors. Consider this program aimed at computing 360
+degrees divided successively by the integers between 2 and 5:
+
+my ($a, $b, $c, $d) = 2, 3, 5;
+my $value = 360;
+$value /= $_ for $a, $b, $c, $d;
+say $value;
+
+This program compiles correctly but displays a warning and then an exception on
+runtime:
+Use of uninitialized value of type Any in numeric context
+in block at product.pl6 line 3
+Attempt to divide 12 by zero using div
+in block <unit> at product.pl6 line 4
+The error message indicates a “division by zero” exception on line 4, but there is
+nothing wrong with that line. The warning on line 3 might give us a clue that the
+script attempts to use an undefined value, but the real error is on the first line of the
+script, where one of the four necessary integers (4) was omitted by mistake from the
+list assignment.
+You should take the time to read error messages carefully, but don’t assume they point
+to the root cause of the exception; they often point to subsequent problems.
+

@@ -1,0 +1,24 @@
+Leap of Faith
+
+Following the flow of execution is one way to read programs, but it can quickly
+become overwhelming. An alternative is what may be called the “leap of faith.” When
+you come to a subroutine call, instead of following the flow of execution, you assume
+that the subroutine works correctly and returns the right result.
+In fact, you are already practicing this leap of faith when you use built-in functions.
+When you call math functions such as cos or sqrt, you don’t examine the bodies of
+those functions. You just assume that they work because the people who wrote the
+built-in functions were likely to be good programmers (and because you can safely
+assume that they have been thoroughly tested).
+The same is true when you call one of your own subroutines. For example, in
+“Boolean Functions” on page 82, we wrote a subroutine called is-divisible that
+determines whether one number is divisible by another. Once we have convinced
+ourselves that this subroutine is correct—by examining the code and testing—we can
+use the subroutine without looking at the body again.
+The same is true of recursive programs. When you get to the recursive call, instead of
+following the flow of execution, you should assume that the recursive call works
+(returns the correct result) and then ask yourself, “Assuming that I can find the facto‐
+rial of $n-1, can I compute the factorial of $n ?” It is clear that you can, by multiplying
+by $n .
+Of course, it’s a bit strange to assume that the subroutine works correctly when you
+haven’t finished writing it, but that’s why it’s called a leap of faith!
+

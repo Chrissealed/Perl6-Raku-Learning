@@ -1,0 +1,66 @@
+The Fable of the Shepherd
+
+Once upon a time, there was a sheep farmer who had a flock of sheep. His typical
+workday looked like this:
+
+$shepherd.move_flock($pasture);
+$shepherd.monitor_flock();
+$shepherd.move_flock($home);
+
+Eventually, due to successful wool sales, he expanded his farming activities and his
+day became like this:
+
+$shepherd.move_flock($pasture);
+$shepherd.monitor_flock();
+$shepherd.move_flock($home);
+$shepherd.other_important_work();
+
+But now the shepherd wanted to devote more time to other_important_work() , so
+he decided to hire a minion to handle the sheep-related work, so the work was now
+split like this:
+
+$shepherd-boy.move_flock($pasture);
+$shepherd-boy.monitor_flock();
+$shepherd-boy.move_flock($home);
+$shepherd.other_important_work();
+
+This did give the shepherd more time for other_important_work(), but unfortu‐
+nately the $shepherd-boy had a tendency to cry wolf, so the farmer had to replace
+him with a new assistant:
+
+$sheep-dog.move_flock($pasture);
+$sheep-dog.monitor_flock();
+$sheep-dog.move_flock($home);
+$shepherd.other_important_work();
+
+$sheep-dog was more reliable and demanded less pay than $shepherd-boy, so this
+was a win for the farmer.
+
+The Moral
+
+We can learn a few things from this parable.
+
+Delegation
+To handle complexity, delegate to a suitable entity, e.g., the farmer delegates some of
+his work to $shepherd-boy .
+
+Encapsulation
+Tell objects what to do, rather than micromanage, e.g.:
+
+$sheep-dog.monitor_flock();
+
+rather than something like:
+
+$sheep-dog.brain.task.monitor_flock;
+
+At a high level, we do not particularly care what the internals of the object are. We
+only care what the object can do.
+An object becomes harder to change the more its internals are exposed.
+
+Polymorphism
+$sheep-dog and $shepherd-boy both understood the same commands, so replacing
+the latter with the former was easier than it would have been otherwise.
+
+The fable of this section is adapted from a post by “Arunbear” on the PerlMonks website.
+Thanks to “Arunbear” for allowing me to reuse it.
+

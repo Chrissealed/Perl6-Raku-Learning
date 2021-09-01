@@ -1,0 +1,155 @@
+The Perl 6 Debugger
+
+Rakudo-Perl 6 ships with an interactive debugger that you call with the perl6-debug
+command (or, on some installs at least, perl6-debug-m). You can just fire this com‐
+mand, followed by the name of the program to be debugged, just as you would nor‐
+mally use perl6 with the name of a program to run the program. One word of
+warning: you can run the debugger on a program only if the program compiles with
+no errors; a debugger is not aimed as finding compile-time errors, but only execution
+or semantic errors.
+
+Once you’ve launched the debugger, you will see something like this:
+
+>>> LOADING while_done.pl6
++ while_done.pl6 (1 - 3)
+| while True {
+|
+my $line = prompt "Enter something ('done' for exiting)\n";
+|
+last if $line eq "done";
+>
+
+This says that it is loading the while_done.pl6 program, and displays the first lines of
+the program; the last line at the bottom (“>”) is a prompt where you can enter some
+commands. The program is stopped at the first statement that actually does some‐
+thing and waits for your input. The code line that is waiting to be executed is high‐
+lighted in a different color.
+
+Getting Some Help
+
+The first command you probably want to issue is “h,” which will display the debugger
+help and return to the prompt. Below, we have omitted most of the output for brev‐
+ity:
+
+> h
+<enter>
+s
+so
+[...]
+q[uit]
+>
+
+single step, stepping into any calls
+step to next statement, stepping over any calls
+step out of the current routine
+exit the debugger
+
+Take the time to issue that command and read the various possible instructions you
+can enter. We will describe the most common ones. As you can see above, just use “q”
+or “quit” to exit the debugger.
+
+Stepping Through the Code
+
+The main characteristic of a debugger is that it lets you run the program step by step.
+Each time you hit the Enter key, the program will move forward one step (e.g., one
+code line). It will enter into any subroutine if the code line is a subroutine call, but
+you can step over the subroutine call by issuing the “s” command at the debugger
+prompt: this will run the subroutine and bring you to the first code line after the sub‐
+routine call (and any nested call of other subroutines) is over. If you entered into a
+subroutine but are no longer interested in stepping through it, just issue the “so”
+command to step out of it.
+
+At any point through that process, you can look at the content of variables or even
+call methods on them. To view a variable, just type its name and then press Enter:
+
+> $line
+"foo"
+
+You can also view an array or a hash, or use the index or the key, for example
+
+@array[10] or %hash{"bar"} , to visualize one specific item of the array or the hash.
+
+You may also use “s” (or “say”) or “p” (or “print”) to evaluate and display an expres‐
+sion in the current scope.
+
+Stopping at the Right Place with Breakpoints
+
+You might find it tedious to run through the program step by step until you get to the
+interesting part. As it happens, you can get there immediately using a breakpoint. For
+adding a breakpoint, you type bp add line, where line is the line number where
+you want the program to stop running and resume stepping line by line. Then you
+enter the “r” command and the program will run until it reaches one of the break‐
+points that you have set. The execution will also stop if the program runs into an
+exception; in that case, you can still access variables to try to figure out what went
+wrong. If it does not hit a breakpoint or an exception, it will run to the end.
+
+You can view all breakpoints (bp list), remove one breakpoint (bp rm line), or
+remove all breakpoints (bp rm all). You can also set a breakpoint in another file (for
+example if you are using a module) by using the following syntax: bp add file:line ,
+where “file” is the filename.
+
+You’re all set to start using the debugger
+
+You probably know enough by now to make good use of the Perl 6 debugger, step
+through your program, and find out where it does something that isn’t what you
+intended. It wasn’t so much to learn, was it? Try it!
+
+We’ll cover a couple of additional goodies, though.
+
+Logging Information with Trace Points
+
+It is possible to set trace points on specific lines of code and variables (or expres‐
+sions), with the command tp add line $var. This will record the value of $var each
+time the programs hits the chosen line. Then you simply run the program for a while
+and, at some point, you can visualize how the variable changed over time, using the
+command tp show .
+
+For example, we used it to log the variable $rotated-word in the solution to the Cae‐
+sar’s cipher exercise (see “Exercise 7-3: Caesar’s Cipher” on page 375) for the “ABC‐
+Dabcd” input string with a rotation of 25 letters; the tp show command displayed
+how the coded output string was progressively populated letter by letter:
+
+> tp show
+>>> rotate.pl6:23
+*
+* Z
+* ZA
+* ZAC
+* ZACB
+* ZACBz
+* ZACBza
+* ZACBzab
+
+Stepping Through a Regex Match
+
+The debugger can also provide useful information when the code is trying to match a
+regex. For example, suppose we’re running a program under the debugger in which
+we have the following code:
+
+"foobar" ~~ /f.+b/;
+
+If you run the regex step by step, color highlighting will show atom by atom where it
+is in the regex and which part of the string has been matched. (We can’t show the
+color highlighting here, but you should try it to see it.)
+
+With the above regex, you’ll see that the regex engine tries to match the “f ” of the
+pattern and that it finds an “f ” at the beginning of the string; next, you’ll see that the
+regex engines tries to match the “.+” subpattern and that it matches the whole string;
+then, when the regex engine tries to match the final “b” of the pattern, you’ll see that
+the regex engine backtracks and gives away the “r” and then the “a”; finally, the regex
+engine succeeds with “foob”.
+
+If you have difficulty understanding how regexes work or are mystified by backtrack‐
+ing, just run the debugger on a few regexes and observe what’s going on step by step.
+You don’t even have to write a program; you can use it as a one-liner. For example, to
+test the above regex as a one-liner under Windows, just type the following command
+at the prompt:
+
+C:\Users\Laurent>perl6-debug-m -e "'foobar' ~~ /f.+b/;"
+
+As usual, change double quotes to single quotes and the other way around if you are
+using a Unix-like platform.
+
+Our final word on the debugger: remember you can always hit “h” to get help on the
+command you need.
+

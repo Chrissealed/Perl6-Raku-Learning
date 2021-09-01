@@ -1,0 +1,24 @@
+Private Methods
+
+Methods are the normal way to use objects, whether with read-only or read and write
+access. They usually form the interface of a class, that is the part of the class that is
+made public and available to programmers wishing to use them. It is thus natural and
+legitimate for methods to be public, i.e., accessible from outside the class.
+
+But a class may also contain numerous methods that are part of the internal cooking
+recipes of the class, i.e., the way it does things internally, and that are not meant to be
+used from outside the class. It is possible to prevent their use from outside the class
+by making these methods private. A Perl 6 private method is prefixed with an excla‐
+mation mark:
+
+method !private-behavior($x, $y) {
+...
+}
+
+You will also need to use an exclamation mark to call them:
+
+$my-object!private-behavior($val1, $val2)
+
+Private methods are really internal to a given class. In particular, they are not inher‐
+ited by child classes.
+

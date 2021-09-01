@@ -1,0 +1,1159 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+
+
+
+                 
+
+
+
+
+
+
+
+<html>
+    <head>
+        <title>O'Reilly Media, Inc.</title>
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+  
+  
+    <LINK REL="stylesheet" TYPE="text/css" HREF="/includes/stylesheet.css" TITLE="style" />
+  
+
+  
+  
+  
+  
+  
+
+
+
+        
+<script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1039.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script><link rel="shortcut icon" href="/images/oreilly/en_us/shop_favicon_16x16.ico" type="image/vnd.microsoft.icon">        
+		<script type="text/javascript" src="/includes/headerScripts.js"></script>
+    </head>
+<body class="popup">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" class="popupLayoutTable" align="center">
+
+  
+  <tr valign="top">
+    <td class=popupcontentbg>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+<style type="text/css" media="print">
+  .windowButtons {
+	display:none;
+   }
+</style>
+
+
+
+
+	
+		
+	
+	
+
+
+
+
+<table border="0" cellpadding="0" cellspacing="0" width="-374">
+
+
+        <tr>
+          <td align="left">
+            <div><img src="/images/oreilly/en_us/local/headers/main/printreceipt_logo.gif" border="0" alt="O'Reilly Media, Inc."></div>
+          </td>
+          <td align="right" nowrap="nowrap">
+            <a href="javascript:window.close()"><img class="windowButtons" src="/images/oreilly/en_us/local/localbuttons/closewindow2_btn.gif" border="0" alt="Close Window" ></a>
+            <img src="/images/oreilly/en_us/global/globalgraphics/spacer01.gif" width="10" height="10" border="0">
+            <a href="javascript:window.print()"><img class="windowButtons" src="/images/oreilly/en_us/local/localbuttons/print_btn.gif" border="0" alt="Print" ></a>
+          </td>
+        </tr>
+
+
+  <tr>
+    <td colspan="2">
+	  
+        
+	  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+	
+		
+	
+	
+
+
+
+
+    
+
+
+
+<table border="0" cellpadding="0" cellspacing="0" width="-374">
+
+
+  <tr>
+    <td class=tableitemheaderbg>
+      <div class="tableheader">
+        Order Info<img src="/images/oreilly/en_us/global/globalgraphics/spacer01.gif" width="10" height="1" border="0">
+      </div>
+    </td>
+    <td class=tableitemheaderbg><img src="/images/oreilly/en_us/global/globalgraphics/spacer01.gif" width="10" height="2" border="0"></td>
+    <td class=tableitemheaderbg>
+      
+        
+      
+    </td>
+  </tr>
+  <tr>
+    <td class=tableitemheaderdivbg><img src="/images/oreilly/en_us/global/globalgraphics/spacer01.gif" width="-192" height="1" border="0"></td>
+    <td class=tableitemheaderdivbg><img src="/images/oreilly/en_us/global/globalgraphics/spacer01.gif" width="10" height="1" border="0"></td>
+    <td class=tableitemheaderdivbg><img src="/images/oreilly/en_us/global/globalgraphics/spacer01.gif" width="-192" height="1" border="0"></td>
+  </tr>
+  <tr valign="top">
+    <td>
+      <div class="tableitem">Order #&nbsp;ML_3545725</div>
+      <div class="tableitem">Date:&nbsp;June 19, 2017</div>
+
+      
+        
+        
+          <div class=tableitem>Status:&nbsp;Ordered</div>
+        
+      
+    </td>
+    <td><img src="/images/oreilly/en_us/global/globalgraphics/spacer01.gif" width="10" height="2" border="0"></td>
+
+    <td>
+      
+        
+      
+    </td>
+  </tr>
+
+
+	<tr>
+		<td colspan=3><img src="/images/oreilly/en_us/global/globalgraphics/spacer01.gif" width="1" height="15" border="0"></td>
+	</tr>
+
+
+	<tr>
+		<td colspan=3>
+
+	
+	
+      
+        
+        
+        
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table border="0" cellpadding="0" cellspacing="0" width="-374">
+  <tr>
+    <td colspan="6">
+
+      <table border="0" cellpadding="0" cellspacing="0" width="-374">
+        <tr>
+          
+          
+            
+            <td class=tableitemheaderbg><div class="tableheader">Billing Info<img src="/images/oreilly/en_us/global/globalgraphics/spacer01.gif" width="10" height="1" border="0"></div></td>
+            <td class=tableitemheaderbg><img src="/images/oreilly/en_us/global/globalgraphics/spacer01.gif" width="10" height="2" border="0"></td>
+            <td class=tableitemheaderbg><div class="tableheader">Payment Method<img src="/images/oreilly/en_us/global/globalgraphics/spacer01.gif" width="10" height="1" border="0"></div></td>
+          
+          
+          
+        </tr>
+        <tr>
+          <td class=tableitemheaderdivbg><img src="/images/oreilly/en_us/global/globalgraphics/spacer01.gif" width="-192" height="1" border="0"></td>
+          <td class=tableitemheaderdivbg><img src="/images/oreilly/en_us/global/globalgraphics/spacer01.gif" width="10" height="1" border="0"></td>
+          <td class=tableitemheaderdivbg><img src="/images/oreilly/en_us/global/globalgraphics/spacer01.gif" width="-192" height="1" border="0"></td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <div class="tableitem">CHRISTIAN&nbsp;BELOSCAR</div>
+            <div class="tableitem">119 Avenue du Loup</div>
+            <div class="tableitem">Résidence BEROUYINE B</div>
+            <div class="tableitem"></div>
+            <div class="tableitem">PAU&nbsp;64000</div>
+            <div class="tableitem">FR</div>
+            <div class="tableitem">33652241408</div>
+            <div class="tableitem"></div>
+            <div class="tableitem">christian.beloscar@gmail.com</div>
+          </td>
+          <td><img src="/images/oreilly/en_us/global/globalgraphics/spacer01.gif" width="10" height="1" border="0"></td>
+          <td>
+
+
+            
+              <div class="tableitem">
+                                
+              </div>
+            
+
+
+            
+			  <div class="tableitem">
+                
+              </div>
+            
+
+
+            
+              <div class="tableitem">
+                
+              </div>
+            
+
+
+		  
+              <div class="tableitem">
+                
+        	        <div style="float:left;"><img  src="/images/oreilly/en_us/local/localgraphics/paypal-icon-50x34.png" border="0" alt="Acceptance Mark"></div>
+					<div style="padding: 0px 0px 0px 60px;">You selected PayPal as<br>your payment method</div>
+				    
+                	
+                
+              </div>
+            
+
+            
+
+              
+                
+                 
+                  <div class="tableitem">
+                      Discount Code&nbsp;MYEPX64278X499
+                  </div>
+                
+                
+					<div>
+					
+					
+					
+					</div>
+					
+              
+
+
+              
+            
+
+          </td>
+        </tr>
+        <tr>
+          <td colspan="3"><img src="/images/oreilly/en_us/global/globalgraphics/spacer01.gif" width="1" height="10" border="0"></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+
+
+
+
+  
+    
+    
+  
+  
+
+
+  
+    
+    
+    
+    
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+        <tr>
+          <td colspan="6">
+            <table border="0" cellpadding="0" cellspacing="0" width="-374">
+
+              <tr class=tableitemheaderbg>
+                
+                
+                  <td><div class="tableheader">Shipping Info<img src="/images/oreilly/en_us/global/globalgraphics/spacer01.gif" width="10" height="1" border="0"></div></td>
+                  <td><img src="/images/oreilly/en_us/global/globalgraphics/spacer01.gif" width="11" height="2" border="0"></td>
+                  <td><div class="tableheader">Shipping Method<img src="/images/oreilly/en_us/global/globalgraphics/spacer01.gif" width="10" height="1" border="0"></div></td>
+                
+                
+                
+			        </tr>
+
+
+              <tr>
+                <td class=tableitemheaderdivbg><img src="/images/oreilly/en_us/global/globalgraphics/spacer01.gif" width="-192" height="1" border="0"></td>
+                <td class=tableitemheaderdivbg><img src="/images/oreilly/en_us/global/globalgraphics/spacer01.gif" width="10" height="1" border="0"></td>
+                <td class=tableitemheaderdivbg><img src="/images/oreilly/en_us/global/globalgraphics/spacer01.gif" width="-192" height="1" border="0"></td>
+              </tr>
+
+
+
+              
+                
+                  
+                  
+                  
+                
+                
+              
+
+              <tr valign="top">
+                <td>
+                  <div class="tableitem">CHRISTIAN&nbsp;BELOSCAR</div>
+                  <div class="tableitem">119 Avenue du Loup</div>
+                  <div class="tableitem">Résidence BEROUYINE B</div>
+                  <div class="tableitem"></div>
+                  <div class="tableitem">PAU&nbsp;64000</div>
+                  <div class="tableitem">FR</div>
+                  <div class="tableitem">33652241408</div>
+                  
+                </td>
+                <td><img src="/images/oreilly/en_us/global/globalgraphics/spacer01.gif" width="10" height="1" border="0"></td>
+                <td>
+                  <div class="tableitem">Electronic Delivery&nbsp;products are available for immediate download after purchase.</div>
+
+                    
+
+                    
+                </td>
+              </tr>
+            </table>
+            
+          </td>
+        </tr>
+        <tr>
+          <td colspan="6"><img src="/images/oreilly/en_us/global/globalgraphics/spacer01.gif" width="1" height="10" border="0"></td>
+        </tr>
+
+
+        
+          
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  function removeItem(sPk, actionPath){
+    var oForm = document.getElementById('mainForm');
+    if (oForm){
+    if(actionPath == "") {
+      actionPath = "/checkout/review.do?method=remove";
+    }
+      var sOldAction = actionPath;
+      sOldAction += (oForm.action.indexOf("?") == -1)? "?":"&";
+      sOldAction += "removeItems="+sPk;
+      oForm.action = sOldAction;
+      //alert(oForm.action);
+      oForm.submit();
+    }
+  }
+</script>
+
+
+  <tr>
+		<td class=tableitemheaderbg><div class=tableheader>Item#</div></td>
+		<td class=tableitemheaderbg><div class=tableheader>Product</div></td>
+		<td align=center class=tableitemheaderbg><div class=tableheader>Quantity</div></td>
+		<td align=right class=tableitemheaderbg><div class=tableheader>Item Price</div></td>
+		<td align=right class=tableitemheaderbg><div class=tableheader>Total Price</div></td>
+		<td align=center class=tableitemheaderbg><div class=tableheader>&nbsp;</div></td>
+	</tr>
+
+
+  <tr>
+		<td colspan="6" class=tableitemheaderdivbg><img src="/images/oreilly/en_us/global/globalgraphics/spacer01.gif" width="1" height=1 border="0"></td>
+	</tr>
+
+
+  
+ 
+	
+    
+    
+
+
+      
+        
+          
+          
+        
+        
+      
+
+       
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+    
+    
+    
+    
+    
+  
+  
+
+
+<tr class="tableitem1bg" valign="top">
+
+    <td><div class=tableitem>0636920065883.IP</div></td>
+    <td>
+
+    <div class=tableitem>
+      Think Perl 6
+      
+    </div>
+
+
+    <div class=tableitem>
+	
+		
+	        
+       		
+	      		
+		      
+		          Ebook
+		      
+		    
+	    
+        
+    </div>
+
+    
+      
+    
+
+    
+
+
+      
+
+
+      
+
+    </td>
+
+
+    <td align=center>
+      <div class=tableitem>1</div>
+    </td>
+
+
+   
+    
+    
+      <td align=right>
+        
+          
+            <div class=tableitem>&nbsp;$4.99</div>
+            <div class=tableitem>&nbsp;<span class="pricewas">$50.99</span></div>
+          
+          
+        
+      </td>
+    
+  
+
+
+   
+    
+    
+      <td align="right">
+        <div class="tableitem">
+          &nbsp;$4.99
+        </div>
+      </td>
+    
+  
+
+
+  
+    
+      <td align=center><div class=tableitem>&nbsp;</div></td>
+    
+    
+  
+
+</tr>
+
+
+
+
+
+
+<tr class="tableitem1bg" valign=top>
+  <td><div class=tableitem>&nbsp;</div></td>
+  <td colspan=5>
+    
+     
+        
+        
+            
+            <div class=tableitem><div class="messagediscount">
+            Your ebook upgrade was applied.</div></div>
+            
+        
+        
+     
+    
+  </td>
+</tr>
+
+
+
+
+
+  
+
+
+
+
+  <tr class="tableitem1bg" valign="top">
+    <td><div class=tableitem>&nbsp;</div></td>
+    <td colspan="5">
+    
+      
+        
+          
+        
+        
+      
+      
+          
+            
+            
+              
+                <div class="tableitem">
+                
+                 
+                
+                  
+                  
+                </div>
+                <div class="tableitem">
+                  
+                  
+                  
+                  
+                    
+                    
+                  
+                </div>
+              
+            
+          
+        
+    </td>
+  </tr>
+
+
+
+
+    <tr>
+      <td colspan=6 class=tableitembottomdivbg valign=top><img src="/images/oreilly/en_us/global/globalgraphics/spacer01.gif" width="1" height="1" border="0"></td>
+    </tr>
+       
+  
+
+
+
+
+
+  
+
+  
+	 
+      <tr valign=top>
+        <td colspan=4 align=right><div class=tableitem><b>Merchandise Subtotal</b></div></td>
+        <td align=right><div class=tableitem><b>$4.99</b></div></td>
+        <td><img src="/images/oreilly/en_us/global/globalgraphics/spacer01.gif" width="1" height="1" border="0"></td>
+      </tr>
+      
+      
+	  
+		    
+	   
+      
+       <tr valign=top>
+         <td colspan=4 align=right><div class=tableitem>Shipping</div></td>
+         <td align=right><div class=tableitem>$0.00</div></td>
+         <td><img src="/images/oreilly/en_us/global/globalgraphics/spacer01.gif" width="1" height="1" border="0"></td>
+       </tr>
+
+      
+      
+
+      
+    
+
+    
+    
+      <tr valign=top>
+        <td colspan=4 align=right><div class=tableitem>Estimated Tax</div></td>
+        <td align=right><div class=tableitem>$0.00</div></td>
+        <td><img src="/images/oreilly/en_us/global/globalgraphics/spacer01.gif" width="1" height="1" border="0"></td>
+      </tr>
+      <tr>
+        <td colspan=6 class=tableitembottomdivbg valign=top><img src="/images/oreilly/en_us/global/globalgraphics/spacer01.gif" width="1" height="1" border="0"></td>
+      </tr>
+      <tr valign=top>
+        <td colspan=4 align=right><div class=tableitem><b>Total</b></div></td>
+        <td align=right><div class=tableitem><b>$4.99</b></div></td>
+        <td><img src="/images/oreilly/en_us/global/globalgraphics/spacer01.gif" width="1" height="1" border="0"></td>
+      </tr>
+      <tr>
+        <td colspan=6><img src="/images/oreilly/en_us/global/globalgraphics/spacer01.gif" width="1" height="10" border="0"></td>
+      </tr>
+  
+
+
+
+
+
+
+
+</table>
+	
+
+
+    </td>
+	</tr>
+</table>
+
+	</td>
+  </tr>
+
+  <tr>
+    <td colspan="2">
+      <div><img src="/images/oreilly/en_us/global/globalgraphics/spacer01.gif" width="1" height="10" border="0"></div>
+    </td>
+  </tr>
+
+
+  <tr>
+    <td colspan="2">
+      <div>Thank you for your order! You will receive a copy of your order via email. Please contact <a target="_blank" href="/category/customer-service.do">customer service</a> if you need assistance.</div>
+    </td>
+  </tr>
+
+  <tr>
+    <td colspan="2">
+      <div><img src="/images/oreilly/en_us/global/globalgraphics/spacer01.gif" width="1" height="10" border="0"></div>
+    </td>
+  </tr>
+
+
+  <tr>
+    <td align="right" colspan="2">
+      <a href="javascript:window.close()"><img class="windowButtons" src="/images/oreilly/en_us/local/localbuttons/closewindow2_btn.gif" border="0" alt="Close Window" ></a>
+      <img src="/images/oreilly/en_us/global/globalgraphics/spacer01.gif" width="10" height="10" border="0">
+      <a href="javascript:window.print()"><img class="windowButtons" src="/images/oreilly/en_us/local/localbuttons/print_btn.gif" border="0" alt="Print" ></a>
+    </td>
+  </tr>
+
+</table>
+</td>
+  </tr>
+</table>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+<!-- Omniture Reporting Support -->
+<!-- SiteCatalyst code version: H.20.3.
+Copyright 1997-2009 Omniture, Inc. More info available at
+http://www.omniture.com -->
+
+<script language="JavaScript">
+function getId() {
+  return "ororeilly,orglobal"
+}
+function getSerializationID() {
+  return "9548025"
+}
+</script>
+<script language="JavaScript" type="text/javascript" src="/text/omniture/js/s_code.js"></script>
+<script language="JavaScript" type="text/javascript" src="/omniture/parseOmnitureJSON.js"></script>
+<script language="JavaScript" type="text/javascript"><!--
+
+
+
+    var oOmnitureJSON = {"eVar4":"Checkout: Post Checkout","eVar5":"Checkout: Post Checkout - Print Receipt","pageName":"Checkout - Print Receipt","eVar3":"Checkout: Post Checkout","prop2":"Checkout: Post Checkout - Print Receipt","prop1":"Checkout: Post Checkout","eVar6":"Checkout: Post Checkout - Print Receipt","prop3":"Checkout: Post Checkout - Print Receipt","channel":"Checkout: Post Checkout"};
+
+    parseOmnitureJSON(oOmnitureJSON);
+
+/************* DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/
+var s_code=s.t();if(s_code)document.write(s_code)//--></script>
+<script language="JavaScript" type="text/javascript"><!--
+if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+'-')
+//--></script><noscript><a href="http://www.omniture.com" title="Web Analytics"><img
+src="http://ororeilly,orglobal.122.2O7.net/b/ss/ororeilly,orglobal/1/H.20.3--NS/0"
+height="1" width="1" border="0" alt="" /></a></noscript><!--/DO NOT REMOVE/-->
+<!-- End SiteCatalyst code version: H.20.3. -->
+<!-- End, Omniture Reporting Support -->
+
+
+
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+<!-- Google Analytics Reporting Support -->
+<!-- Google Analytics More info available at http://www.google.com/analytics/index.html -->
+<script language="JavaScript" type="text/javascript" src="/googleanalytics/parseGoogleAnalyticsJSON.js"></script>
+<script type="text/javascript"> 
+var _gaq = _gaq || []; 
+_gaq.push(['_setAccount', 'UA-4591498-1']); 
+_gaq.push(['_setDomainName', 'oreilly.com']); 
+_gaq.push(['_addIgnoredRef', 'oreilly.com']); 
+_gaq.push(['_trackPageview']); 
+
+  
+    
+  
+  (function() { 
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; 
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; 
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); 
+  })(); 
+
+</script> 
+<!-- End, Google Analytics Reporting Support -->
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"applicationID":"26513819","applicationTime":67,"beacon":"bam.nr-data.net","queueTime":0,"licenseKey":"85a7277884","transactionName":"b11UZkoDW0ZZVkNeDlYXZUZKF0FGeVZDXg5WF1VdVUxYVEpeUkMNUU5THFkSRRtaB1QZAFtbWUdWFht6SlFSRSVdTFdbVCNWQVFaWQ==","agent":"","errorBeacon":"bam.nr-data.net"}</script></body>
+<script type="text/javascript" src="/includes/footerScripts.js"></script>
+</html>

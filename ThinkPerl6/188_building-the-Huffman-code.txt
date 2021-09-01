@@ -1,0 +1,100 @@
+Building the Huffman Code
+
+For our purposes, Morse code has one defect: it does not use just two symbols as you
+might think, but actually three: in addition to the dots and dashes, it is also implicitly
+using the space between two symbols, as well as a longer space between two letters.
+
+The reason why some space is needed is quite simple. Refer to the Morse code table
+above and suppose you receive three dots (...). This could be interpreted as the let‐
+ter “e” three times, or as “ie” or “ei,” or as “s,” or as the beginning of “h,” “v,” “3,” “4,” or
+“5.” Added spaces make it possible to disambiguate between those various possibili‐
+ties. But they also make code transmission much slower.
+
+In 1951, David A. Huffman invented a code-building technique that avoids this prob‐
+lem: provided that you know where a given letter starts, it is totally unambiguous. For
+example, we will meet later a Huffman code for a small subset of the alphabet that
+looks like this:
+
+a => ..
+e => .-
+s => -.-
+n => -..
+t => --.
+d => ---.
+r => ----
+
+If you start reading a sequence of dots and dashes representing a valid text composed
+with these seven letters, you can always decode it without any ambiguity. If the first
+symbol is a dot, then the letter is either an “a” or a “e” depending on the next symbol.
+If the first symbol is a dash and the next one a dot, then the letter must be either an
+“s” or an “n” depending on the third symbol. If the two first symbols are dashes, you
+can similarly determine that the current letter is a “t” (if the third symbol is a dot), or
+a “d” or a “r,” which you can find out by looking at the fourth symbol. In brief, you
+don’t need spaces between the symbols; it is always possible to unambiguously decode
+a letter.
+
+How can we build such a Huffman code? Let’s do it by hand with a very simple alpha‐
+bet: the four letters of the nucleo-bases of DNA: A, C, T, and G. Suppose we want to
+encode the following input string:
+
+CCTATCCTCGACTCCAGTCCA
+
+This gives the following frequency table:
+
+C : 10 47.62
+T : 5  23.81
+A : 4  19.05
+G : 2  9.52
+
+To build the Huffman code, we start with the two less frequent letters, and merge
+them into one new temporary symbol,[GA], which we pretend is a new composite
+letter with a frequency of 6. At this point, we decide that, between two letters, the less
+frequent one will have an appended dot and the other an appended dash (this is an
+arbitrary choice; it could be done the other way around). So we say that the symbol
+for the least common of the two letters (“G”) will be [GA]. and the symbol for “A” will
+be [GA]-.
+
+We are now left with three letters, C, T and [GA]. We merge the two least frequent
+letters, “T” and “[GA],” and can now tell that the symbol for “T” will be [TGA]. and
+the symbol for [GA] will be [TGA]- . There are only two letters left, “C” and “TGA,”
+with “C” the least frequent one; so “C” will be a dot and “TGA” a dash.
+We can now unroll our dummy letters: “T” is [TGA]. , so replacing [TGA] with its
+symbol, i.e., a dash, the final code for “T” will be -. ; similarly, [GA]. now translates
+into -- . By the same substitution process, we can now determine that “A” is --- and
+“G” --. . So our final Huffman code table is:
+
+C => .
+T => -.
+G => --.
+A => ---
+
+Notice that, by construction, the most frequent letter (C) has the shortest code and
+the least common letters (G and A) the longest codes.
+
+Manually encoding the CCTATCCTCGACTCCAGTCCA input string with this code yields the
+following pseudo-Morse code:
+
+..-.----...-..--.---.-...-----.-...---
+
+Note that our Huffman code is not ambiguous: the first dot can only be a “C,” and the
+second one also. The next symbol is a dash, which can be the beginning of the three
+other letters, but only “T” can have a dot afterwards. The next sequence of symbols is
+four dashes. This can only be the three dashes of a “A,” with the last dash being the
+beginning of the next letter; and -. can only be a “T,” and so on.
+
+In a real-life Huffman encoding for text file compression, we would not use dots and
+dashes, but 0 and 1 bits; however, dots and dashes are just another nice way of repre‐
+senting those binary values. So, let’s just pretend that dots and dashes are really 0 and
+1 binary numbers.
+
+Did we really achieve data compression? Our pseudo-Morse string has 38 binary
+symbols. The original input string had 21 characters or bytes, that is 168 bits. The
+data has been compressed by a factor of about 4.4.
+
+Is Huffman coding better than a fixed-length code? A string representation where
+each letter would be represented by two bits (two bits can represent four letters)
+would require 42 symbols. So, yes, we did obtain a better data compression than a
+fixed-length encoding (by about 10%). This may seem to be a small achievement, but
+this is actually quite good with such a small alphabet. With real text data, Huffman
+coding can achieve significant data compression.
+

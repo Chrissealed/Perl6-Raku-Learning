@@ -1,0 +1,32 @@
+Interface and Implementation
+
+One of the goals of object-oriented design is to make software more maintainable,
+which means that you can keep the program working when other parts of the system
+change, and modify the program to meet new requirements.
+
+A design principle that helps achieve that goal is to keep interfaces separate from
+implementations. For objects, that means that the public interface of the methods
+provided by a class should not depend on how the attributes are represented.
+
+For example, we designed a Point2D class in which the main attributes were the
+point’s Cartesian coordinates. We may find out that, for the purpose of our applica‐
+tion, it would be easier or faster to store the point’s polar coordinates in the object
+attributes. It is entirely possible to change the internal implementation of the class,
+and yet keep the same interface. In order to do that, we would need the constructor to
+convert input parameters from Cartesian into polar coordinates, and store the latter
+in the object attribute. The polarCoordinates method would return the stored
+attributes, whereas methods returning the Cartesian coordinates may have to do the
+backward conversion (or may perhaps be stored separately in private attributes).
+
+Overall, the change can be made with relatively heavy refactoring of the Point2D
+class, but users of the class would still use the same interface and not see the differ‐
+ence.
+
+After you deploy a new class, you might discover a better implementation. If other
+parts of the program are using your class, it might be time-consuming and error-
+prone to change the interface.
+
+But if you designed the interface carefully, you can change the implementation
+without changing the interface, which means that other parts of the program don’t
+have to change.
+

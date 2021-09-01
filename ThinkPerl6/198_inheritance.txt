@@ -1,0 +1,8 @@
+Inheritance
+
+Inheritance is probably the most emblematic feature of object-oriented program‐
+ming. It is a mechanism through which it is possible to derive a class from another
+class. Inheritance is one of the standard ways to implement code reuse in object-
+oriented programming. It is also another useful way of defining successive layers of
+abstraction and a hierarchy of types.
+

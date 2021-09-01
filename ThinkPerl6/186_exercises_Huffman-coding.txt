@@ -1,0 +1,52 @@
+Exercises: Huffman Coding
+
+Huffman coding is a technique used for data compression, i.e., to reduce the size of a
+piece of data (such as, for example, compressing a file).
+
+Variable-Length Codes
+
+If you are familiar with Morse code, you know that it is a system for encoding the
+letters of the alphabet as a series of dots and dashes. For example, the famous
+signal ...---... represents the letters SOS, which comprise an internationally recog‐
+nized call for help. The table in Figure 11-3 shows the rest of the codes.
+
+Figure 11-3. International Morse code (public domain)
+
+Morse code (invented between 1836 and 1844) was one of the very first attempts at
+digital encoding of the alphabet of a plain text. The only known earlier attempt is the
+braille alphabet (1824-1837).
+
+Notice that some codes are longer than others. By design, the most common letters
+have the shortest codes. Since there are a limited number of short codes, that means
+that less common letters and symbols have longer codes. A typical message will have
+more short codes than long ones, which minimizes the average transmission time per
+letter.
+
+Codes like this are called variable-length codes. In this exercise, we will look at an
+algorithm for generating a variable-length code called a Huffman code. It is an inter‐
+esting algorithm in its own right, but it also makes a useful exercise because its imple‐
+mentation uses a variety of data structures.
+
+Here is an outline of what we will do until the end of this chapter:
+
+1. First, we will use a sample of English text to generate a table of characters and
+their frequencies.
+
+2. Then we will use this frequency table to generate a code table.
+
+3. Finally, we will encode a message with this code table and then decode it.
+
+The Frequency Table
+
+Since the goal is to give short codes to common letters, we have to know how often
+each letter occurs. In Edgar Allan Poe’s short story “The Gold Bug,” one of the charac‐
+ters, William Legrand, uses letter frequencies to crack a cypher. He explains:
+Now, in English, the letter which most frequently occurs is e. Afterwards, the succes‐
+sion runs thus: a o i d h n r s t u y c f g l m w b k p q x z. E however predominates so
+remarkably that an individual sentence of any length is rarely seen, in which it is not
+the prevailing character.
+
+So our first mission is to see whether Poe got it right. To check, let’s use as a sample
+the text of “The Gold Bug” itself, which can be downloaded from Project Gutenberg
+and a variety of other websites.
+

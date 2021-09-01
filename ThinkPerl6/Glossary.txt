@@ -1,0 +1,639 @@
+Glossary
+
+CHAPTER 1 : The Way of the Program
+----------------------------------
+
+abstraction
+A way of providing a high-level view of a task and hiding the underlying techni‐
+cal details so that this task becomes easy.
+
+bug
+An error in a program.
+
+compiler
+A program that reads another program and transforms it into executable com‐
+puter code; there used to be a strong difference between interpreted and com‐
+piled languages, but this distinction has become blurred over the last two decades
+or so.
+
+debugging
+The process of finding and correcting bugs.
+
+formal language
+Any one of the languages that people have designed for specific purposes, such as
+representing mathematical ideas or computer programs; all programming lan‐
+guages are formal languages.
+
+integer
+A type that represents whole numbers.
+
+interpreter
+A program that reads another program and executes it.
+
+natural language
+Any one of the languages that people speak that evolved naturally.
+
+operator
+A special symbol that represents a simple computation like addition, multiplica‐
+tion, or string concatenation.
+
+parse
+To examine a program and analyze the syntactic structure.
+
+print statement
+An instruction that causes the Perl 6 interpreter to display a value on the screen.
+
+problem solving
+The process of formulating a problem, finding a solution, and expressing it.
+
+program
+A set of instructions that specifies a computation.
+
+prompt
+Characters displayed by the interpreter to indicate that it is ready to take input
+from the user.
+
+rational
+A type that represents numbers with fractional parts. Internally, Perl stores a
+rational as two integers representing respectively the numerator and the denomi‐
+nator of the fractional number.
+
+string
+A type that represents sequences of characters.
+
+syntax
+The rules that govern the structure of a program.
+
+token
+One of the basic elements of the syntactic structure of a program, analogous to a
+word in a natural language.
+
+type
+A category of values. The types we have seen so far are integers (type Int ),
+rational numbers (type Rat ), and strings (type Str ).
+
+value
+One of the basic units of data, like a number or string, that a program
+manipulates.
+
+CHAPTER 2 : Variables, Expressions, and Statements
+--------------------------------------------------
+
+assignment
+A statement that assigns a value to a variable.
+
+comment
+Information in a program that is meant for other programmers (or anyone read‐
+ing the source code) and has no effect on the execution of the program.
+
+concatenate
+To join two string operands end-to-end.
+
+evaluate
+To simplify an expression by performing the operations in order to yield a single
+value.
+
+exception
+An error that is detected while the program is running.
+
+execute
+To run a statement and do what it says.
+
+expression
+A combination of operators and terms that represents a single result.
+
+interactive mode (or interpreter mode)
+A way of using the Perl interpreter by typing code at the prompt.
+
+keyword
+A reserved word that is used to parse a program; in many languages, you cannot
+use keywords like if , for , and while as variable names. This problem usually
+does not occur in Perl because variable names begin with a sigil.
+
+one-liner mode
+A way of using the Perl interpreter to read code passed at the operating system
+prompt and run it.
+
+operand
+One of the values used by an operator.
+
+order of operations
+Rules governing the order in which expressions involving multiple operators and
+operands are evaluated. It is also called operator precedence.
+
+script
+A program stored in a file.
+
+script mode
+A way of using the Perl interpreter to read code from a script and run it.
+
+semantic error
+An error in a program that makes it do something other than what the program‐
+mer intended.
+
+semantics
+The meaning of a program.
+
+state diagram
+A graphical representation of a set of variables and the values they refer to.
+
+statement
+A section of code that represents a command or action. So far, the statements we
+have seen are assignments and print statements. Statements usually end with a
+semicolon.
+
+syntax error
+An error in a program that makes it impossible to parse (and therefore impossi‐
+ble to compile and to run).
+
+term
+A variable or a literal value.
+
+variable
+Informally, a name that refers to a value. More accurately, a variable is a con‐
+tainer that has a name and holds a value.
+
+CHAPTER 3 : Functions
+---------------------
+
+anonymous function
+A function that has no name.
+
+Any
+A special value typically found in variables that haven’t been assigned a value. It is
+also a special value returned by some functions that we have called “void”
+(because they return something generally useless such as “Any”).
+
+argument
+A value provided to a function when the function is called. This value is assigned
+to the corresponding parameter in the function.
+
+body
+The sequence of statements inside a function definition, usually in a code block
+delimited by braces.
+
+composition
+Using an expression as part of a larger expression, or a statement as part of a
+larger statement.
+
+first-class object
+Perl’s subroutines are said to be higher order objects or first-class objects, because
+they can be passed around as other subroutines’ arguments or return values, just
+as any other objects.
+
+flow of execution
+The order in which statements run.
+
+frame
+A box in a stack diagram that represents a subroutine call. It contains the local
+variables and parameters of the subroutine.
+
+fruitful function
+A function or subroutine that returns a useful value.
+
+function
+A named sequence of statements that performs some useful operation. Functions
+may or may not take arguments and may or may not produce a result. Perl comes
+with many built-in functions, and you can also create your own. In Perl, user-
+defined functions are often called subroutines.
+
+function call
+A statement that runs a function. It consists of the function name followed by an
+argument list, which may or may not be enclosed within parentheses.
+
+function definition
+A statement that creates a new function, specifying its name, parameters, and the
+statements it contains.
+
+function factory
+A function that produces other functions as return values.
+
+function signature
+The part of the definition of a function (usually between parentheses) that
+defines its parameters and possibly their types and other properties.
+
+header
+The first line of a function definition.
+
+immutable parameter
+A function or subroutine parameter that cannot be changed within the function
+body. By default, subroutine parameters are immutable.
+
+lexical variable
+A variable defined inside a subroutine or a code block. A lexical variable defined
+within a function can only be used inside that function.
+
+module
+A file that contains a collection of related functions and other definitions.
+
+Nil
+A special value sometimes returned by some “void” subroutines.
+
+parameter
+A name used inside a subroutine to refer to the value passed as an argument.
+
+return value
+The result of a function. If a function call is used as an expression, the return
+value is the value of the expression.
+
+stack diagram
+A graphical representation of a stack of subroutines, their variables, and the val‐
+ues they refer to.
+
+trait
+A property of a function or subroutine parameter that is defined at compile time.
+
+use statement
+A statement that reads a module file and usually imports some functions.
+
+void function
+A function or subroutine that does not return a useful value.
+
+CHAPTER 4 : Loops, Conditionals, and Recursion
+----------------------------------------------
+
+base case
+A conditional branch in a recursive function that does not make a recursive call.
+
+Boolean expression
+An expression whose value is either True or False .
+
+branch
+One of the alternative sequences of statements in a conditional statement.
+
+chained conditional
+A conditional statement with a series of alternative branches.
+
+condition
+The Boolean expression in a conditional statement that determines which branch
+runs.
+
+conditional statement
+A statement that controls the flow of execution depending on some condition.
+
+infinite recursion
+A recursion that doesn’t have a base case, or never reaches it. Eventually, an infin‐
+ite recursion causes a runtime error, for which you may not want to wait because
+it may take a long time.
+
+integer division
+An operation, denoted div , that divides two numbers and rounds down (toward
+zero) the result to an integer.
+
+logical operator
+One of the operators that combines Boolean expressions: and , or , and not . The
+equivalent higher-precedence operators are && , || , and ! .
+
+modulo operator
+An operator, denoted with a percent sign ( % ), that works on integers and returns
+the remainder when one number is divided by another.
+
+nested conditional
+A conditional statement that appears in one of the branches of another condi‐
+tional statement.
+
+recursion
+The process of calling the function that is currently executing.
+
+relational operator
+One of the operators that compares its operands. The most common numeric
+relational operators are == , != , > , < , >= , and <= . The equivalent string relational
+operators are eq , ne , gt , lt , ge , and le .
+
+return statement
+A statement that causes a function to end immediately and return to the caller.
+
+statement modifier
+A postfix conditional expression, i.e., a conditional expression (using for example
+if , unless , or for ) that is placed after the statement the execution of which it
+controls. It can also refer to a postfix looping expression.
+
+CHAPTER 5 : Fruitful Subroutines
+--------------------------------
+
+dead code
+Part of a program that can never run, often because it appears after a return
+statement.
+
+guardian
+A programming pattern that uses a conditional statement to check for and han‐
+dle circumstances that might cause an error.
+
+incremental development
+A program development plan intended to avoid debugging by adding and testing
+only a small amount of code at a time.
+
+scaffolding
+Code that is used during program development but is not part of the final ver‐
+sion.
+
+temporary variable
+A variable used to store an intermediate value in a complex calculation.
+
+CHAPTER 6 : Iteration
+---------------------
+
+algorithm
+A general process for solving a category of problems.
+
+decrement
+An update that decreases the value of a variable.
+
+increment
+An update that increases the value of a variable (often by one).
+
+infinite loop
+A loop in which the terminating condition is never satisfied.
+
+initialization
+An assignment that gives an initial value to a variable that may later be updated.
+
+iteration
+Repeated execution of a set of statements using either a recursive function call or
+a loop.
+
+reassignment
+Assigning a new value to a variable that already exists.
+
+update
+An assignment where the new value of the variable depends on the old.
+
+CHAPTER 7 : Strings
+-------------------
+
+atom
+In a regex pattern, a single character, or several characters grouped together by
+parentheses or square brackets.
+
+adverb
+An argument to a function or to a regex that modifies the way the function or the
+regex engine behaves.
+
+backtracking
+The process by which when a given attempt to match a string fails, the regex
+engine abandons part of the current match attempt, goes back into the string, and
+tries to see if it can find another route to a successful match. The backtracking
+process eventually stops as soon as a successful match succeeds, or ultimately
+when all possible match possibilities have failed.
+
+counter
+A variable used to count something, usually initialized to zero and then incre‐
+mented.
+
+empty string
+A string with no characters and length 0, represented by two quotation marks.
+
+index
+An integer value used to select an item in a sequence, such as a character in a
+string. In Perl indices start from 0.
+
+item
+One of the values in a sequence.
+
+object
+Something a variable can store. For now, you can use “object” and “value” inter‐
+changeably.
+
+pattern
+A sequence of characters using a special syntax to describe from left to right the
+content that is intended to be matched within a target string.
+
+regexes
+A pattern-matching sublanguage of Perl 6 derived from regular expressions.
+
+regular expressions
+A pattern-matching sublanguage derived from formal language theory.
+
+search
+A pattern of traversal that stops when it finds what it is looking for.
+
+sequence
+An ordered collection of values where each value is identified by an integer
+index.
+
+slice
+A part of a string specified by a range of indices.
+
+traverse
+To iterate through the items in a sequence, performing a similar operation on
+each.
+
+CHAPTER 8 : Case Study: Word Play
+---------------------------------
+
+file object
+A value that represents an open file.
+
+reduction to a previously solved problem
+A way of solving a problem by expressing it as an instance of a previously solved
+problem.
+
+special case
+A test case that is atypical or nonobvious (and less likely to be handled correctly).
+The expressions edge case and corner case convey more or less the same idea.
+
+CHAPTER 9 : Arrays and Lists
+----------------------------
+
+accumulator
+A variable used in a loop to add up or accumulate a result.
+
+alias
+A circumstance where an identifier refers directly to some variable or value, so
+that a change to it would lead to a change to the variable or value. It essentially
+means having two names for the same value, container, or object.
+
+array
+A variable containing a mutable sequence of values.
+
+element
+One of the values in a list or an array (or some other sequence), also called items.
+
+filter
+A processing pattern that traverses a list and selects the elements that satisfy
+some criterion. grep is a Perl implementation of a filter.
+
+list
+An immutable sequence of values.
+
+map
+A processing pattern that traverses a sequence and performs an operation on
+each element. Also the name of a Perl built-in function that performs such a pro‐
+cessing pattern.
+
+nested array
+An array that is an element of another array.
+
+reduce
+A processing pattern that traverses a sequence and accumulates the elements into
+a single result.
+
+CHAPTER 10 : Hashes
+-------------------
+
+call graph
+A diagram that shows every frame created during the execution of a program,
+with an arrow from each caller to each callee.
+
+flag
+A Boolean variable used to indicate whether a condition is true.
+
+global variable
+A variable defined outside any subroutine or other block. Global variables can be
+accessed from any subroutine.
+
+hash
+A mapping from keys to their corresponding values.
+
+hashable
+A type that has a hash function. Immutable types like numbers and strings are
+hashable; mutable types like arrays and hashes are not.
+
+hashing function
+A function used by a hash table to compute the location of a key.
+
+hash table
+The algorithm used to implement hashes.
+
+implementation
+A way of performing a computation.
+
+item
+In a hash, another name for a key-value pair.
+
+key
+An object that appears in a hash as the first part of a key-value pair.
+
+key-value pair
+The representation of the mapping from a single key to its value.
+
+lookup
+A hash operation that takes a key and finds the corresponding value.
+
+mapping
+A relationship in which each element of one set corresponds to an element of
+another set.
+
+memo
+A computed value stored to avoid unnecessary future computation.
+
+reverse lookup
+A hash operation that takes a value and finds one or more keys that map to it.
+
+value
+An object that appears in a hash as the second part of a key–value pair. This is
+more specific than our previous use of the word “value.”
+
+CHAPTER 11 : Case Study: Data Structure Selection
+-------------------------------------------------
+
+benchmarking
+The process of choosing between various data structures and algorithms by
+implementing alternatives and testing them (especially their run durations) on a
+sample of the possible inputs.
+
+debugger
+A program that lets you run your code line by line and check its state at any step
+during its execution.
+
+default value
+The value given to an optional parameter if no argument is provided.
+
+deterministic
+Pertaining to a program that does the same thing each time it runs, given the
+same inputs.
+
+override
+To replace a default value with an argument.
+
+pseudorandom
+Pertaining to a sequence of numbers that appears to be random, but is generated
+by a deterministic program.
+
+rubber duck debugging
+Debugging by explaining your problem to an inanimate object such as a rubber
+duck. Articulating the problem can help you solve it, even if the rubber duck
+doesn’t know Perl.
+
+CHAPTER 12 : Classes and Objects
+--------------------------------
+
+attribute
+A state property akin to a variable within an OOP framework. An instance
+attribute is one of the named values associated with an object. Class attributes are
+variables associated with the whole class.
+
+child class
+A new class created by inheriting from an existing class; also called a subclass.
+
+class
+A programmer-defined type. A class definition creates a new type object (a form
+of abstract definition) and makes it possible to instantiate concrete objects repre‐
+senting real data.
+
+delegation
+Defining a class or a role in which it is possible to invoke methods belonging to
+another object.
+
+embedded object
+An object that is stored as an attribute of another object.
+
+encapsulation
+The principle that the interface provided by an object should not depend on its
+implementation, in particular the representation of its attributes. This is also
+called information hiding.
+
+inheritance
+The ability to define a new class that is a modified version of a previously defined
+class.
+
+instance
+An object that belongs to a class and contains real data.
+
+instantiate
+To create a new object.
+
+method
+A special kind of subroutine defined within a class or a role that can be called
+using the dot notation syntax.
+
+multiple inheritance
+A situation in which a child class is derived and inherits from more than one par‐
+ent class.
+
+object
+An entity that encloses its state (attributes) and its behavior (methods).
+
+object composition
+Using an object as part of the definition of another object, especially using an
+object as an attribute of another object.
+
+object diagram
+A diagram that shows objects, their attributes, and the values of the attributes.
+
+override
+when the method of a parent class is redefined in a child class, it is said to be
+overridden within that child class.
+
+parent class
+The class from which a child class inherits.
+
+polymorphic
+Pertaining to a function that can work with more than one type.
+
+role
+A collection of methods quite similar to a class but that is not designed to build
+objects. A role contains methods that can be applied to a class or an object to add
+new behaviors to them.
+
+subclassing
+Creating a child class derived from an existing parent class.
+
+type object
+An object that contains information about a programmer-defined type. The type
+object can be used to create instances of the type.
+
+CHAPTER 13 : Regexes and Grammars 
+---------------------------------
+
+

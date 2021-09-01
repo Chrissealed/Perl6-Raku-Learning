@@ -1,0 +1,44 @@
+# Composition
+#
+# As you should expect by now, you can call one function from within another. As an
+# example, we’ll write a function that takes two points, the center of the circle and a
+# point on the perimeter, and computes the area of the circle.
+# Assume that the center point is stored in the variables $x-c and $y-c, and the perim‐
+# eter point is in $x-p and $y-p. The first step is to find the radius of the circle, which is
+# the distance between the two points. We just wrote a function, distance , that does
+# that:
+#
+# my $radius = distance($x-c, $y-c, $x-p, $y-p);
+#
+# The next step is to find the area of a circle with that radius; we just wrote that, too:
+#
+# my $result = area($radius);
+#
+# Encapsulating these steps in a function, we get:
+
+sub circle-area($x-c, $y-c, $x-p, $y-p) {
+    my $radius = distance($x-c, $y-c, $x-p, $y-p);
+    my $result = area($radius);
+    return $result;
+}
+
+my $area = circle-area 5, 5, 10, 10;
+say $area;
+
+# The temporary variables $radius and $result are useful for development and
+# debugging, but once the program is working, we can make it more concise by com‐
+# posing the function calls:
+
+sub circle-area2($x-c, $y-c, $x-p, $y-p) {
+    return area distance($x-c, $y-c, $x-p, $y-p);
+}
+
+my $area = circle-area2 5, 5, 10, 10;
+say $area;
+
+# The last line of the previous example now works like a data pipeline from right to left:
+# the distance function takes the four arguments and returns a distance (the radius)
+# which is fed as an argument to the area ; with this argument, area is now able to
+# return the area, which is then returned by circle-area to the caller code. We’ll come
+# back later to this very expressive data pipeline model.
+

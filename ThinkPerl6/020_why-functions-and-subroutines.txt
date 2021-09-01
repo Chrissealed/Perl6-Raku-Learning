@@ -1,0 +1,35 @@
+Why Functions and Subroutines?
+
+It may not be clear why it is worth the trouble to divide a program into functions or
+subroutines. There are several reasons:
+
+• Creating a new subroutine gives you an opportunity to name a group of state‐
+ments, which makes your program easier to read and debug. Subroutines also
+help make the flow of execution clearer to the reader.
+
+• Subroutines can make a program smaller by eliminating repetitive code. Later, if
+you make a change, you only have to make it in one place.
+
+• Dividing a long program into subroutines allows you to debug the parts one at a
+time and then assemble them into a working whole.
+
+• Well-designed subroutines are often useful for many programs. Once you write
+and debug one, you can reuse it.
+
+• Creating subroutines is one of the major ways to break up a difficult problem
+into smaller easier subtasks and to create successive layers of abstraction, which
+are the key to solve complex problems.
+
+• Writing good subroutines lets you create black boxes, with a known input and a
+known output. So you don’t have to think about them anymore when you’re
+working on something else. They’ve become a tool. Once you’ve assembled an
+electric screwdriver, you don’t need to think about how it works internally when
+you use it to build or repair something.
+
+• In the current open source world, chances are that your code will have to be
+understood, maintained, or enhanced by people other than you. Coding has
+become much more of a social activity than before. Breaking up your code into
+small subroutines whose purpose is easy to understand will make their work
+easier. And you’ll be even more delighted when the person having to maintain or
+refactor your code is...you.
+

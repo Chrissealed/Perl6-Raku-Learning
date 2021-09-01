@@ -1,0 +1,38 @@
+Roles, Classes, Objects, and Types
+
+A role can be applied to an entire class or only to some instances of the class:
+
+role Guide { ...}
+
+class Guide-dog is Dog does Guide {
+...
+} # Composing the Guide role into the Guide-dog class
+# inheriting from the Dog class
+
+my $doggy = new Dog;
+$doggy does Guide;
+# creating a Dog object
+# applying the role to the object
+
+Roles and classes are different, but both are or define types. This means that a role
+can be used as a type for a variable declaration where you might expect a class name.
+For example, the Guide role sketched in the code snippet above does effectively create
+a Guide type. So a Blind role for a human might have an attribute of Guide type,
+which might represent a guide-dog, a guide-horse, a human guide, or even a guiding
+robot.
+
+class Human {
+    has Dog $dog;
+    # May contain any dog, with or without
+    # a guide role
+}
+
+role Blind {
+    has Guide $guide;
+    # May contain any Guide type, whether
+    # a dog, a horse, a human or a robot
+}
+
+A number of Perl 6 built-in types are defined by roles and not by classes, such as IO,
+Iterable, Iterator, Numeric, Rational, Real, etc.
+

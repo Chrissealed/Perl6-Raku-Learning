@@ -1,0 +1,33 @@
+Roles and Composition
+
+Inheritance is a very powerful concept to describe a hierarchical tree of concepts. For
+example, you can think of a hierarchy of geometrical figures having more and more
+specific properties:
+1. Polygon
+2. Quadrilateral (a polygon with four edges and four corners)
+3. Trapezoid (a quadrilateral with one pair of parallel edges)
+4. Parallelogram (a trapezoid with two pairs of parallel edges and opposite sides of
+equal length)
+5. Rectangle (a parallelogram with four right angles)
+6. Square (a rectangle with all four edges of equal length)
+
+It is relatively easy to imagine a series of classes with a hierarchical inheritance tree
+reflecting those properties. It gets slightly more complicated, however, if we add the
+rhombus (a parallelogram with all sides equal), because the square is now also a
+rhombus with four right angles. The square class would subclass both the rectangle
+and the rhombus, and we might have a possible multiple inheritance issue.
+
+Similarly, we can think of a tree of classes with nested inheritance representing vari‐
+ous types of numbers (e.g. integer, rational, real, complex) or animal species (e.g., ver‐
+tebrate, mammal, carnivoran, canid, dog, Irish setter).
+These are great examples for inheritance, but the real world is rarely so hierarchical,
+and it is often difficult to force everything to fit into such a hierarchical model.
+
+This is one of the reasons why Perl introduces the notion of roles. A role is a set of
+behaviors or actions that can be shared between various classes. Technically, a role is a
+collection of methods (with possibly some attributes); it is therefore quite similar to a
+class, but the first obvious difference is that a role is not designed to be instantiated as
+an object (although roles can be promoted into classes). The second difference, per‐
+haps more important, is that roles don’t inherit: they are used through application to a
+class and/or composition.
+

@@ -1,0 +1,10 @@
+CHAPTER 6
+
+Iteration
+
+This chapter is about iteration, which is the ability to run a block of statements
+repeatedly. We saw a kind of iteration, using recursion, in “Recursion” on page 66. We
+saw another kind, using a for loop, in “for Loops” on page 64. In this chapter we’ll see
+yet another kind, using a while statement. But first I want to say a little more about
+variable assignment.
+

@@ -1,0 +1,6 @@
+Map, Filter, and Reduce
+
+When traversing the elements of an array (or a list), so far we have processed one
+item at a time with a loop. We will now study ways to process all the elements in one
+go.
+

@@ -1,0 +1,29 @@
+CHAPTER 12
+
+Classes and Objects
+
+At this point you know how to use functions to organize code and built-in types to
+organize data. The next step is to learn “object-oriented programming,” which uses
+programmer-defined types to organize both code and data.
+
+When software applications start to grow large, the number of details to be handled
+becomes overwhelming. The only way to manage this complexity is to use abstraction
+and encapsulation. Object orientation is a very popular and efficient way to imple‐
+ment abstraction and encapsulation.
+
+Perl 6 is an object-oriented programming language, which means that it provides fea‐
+tures that support object-oriented programming, which has these defining character‐
+istics:
+
+• Programs include class and method definitions.
+
+• Most of the computation is expressed in terms of operations on objects.
+
+• Objects often represent things in the real world, and methods often correspond
+to the ways things in the real world interact.
+
+Object-oriented programming in Perl 6 is a big topic that may be worth a book by
+itself (and there will probably be a book or two on the subject at some point). This
+chapter will hopefully do more than just skim the surface and enable you to create
+and use objects, but will not cover some of the details and more advanced features.
+

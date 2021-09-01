@@ -1,0 +1,17 @@
+Debugging
+
+This section is about using a debugger, a program that is designed to help you to
+debug your programs. “What? There is a tool to debug my programs, and you’re tell‐
+ing me only now?” you might complain. Well, it’s not quite that. A debugger is not
+going to do the debugging for you; you’ll still have to do the hard investigation work,
+but a debugger can help you a lot in figuring out why your program isn’t doing what
+you think it should be doing. Or, rather, why what your program is doing isn’t quite
+what you want it to do.
+
+Debuggers are a bit like people with a strong personality: some people love them and
+others hate them. Often, people who don’t like debuggers simply never took the time
+to learn how to use them, but there are also many expert programmers who don’t like
+them and whom we can’t suspect of not having seriously tried. Whether you like
+debuggers or not is probably a matter of personal taste, but they can provide invalua‐
+ble help, if you know how to use them.
+

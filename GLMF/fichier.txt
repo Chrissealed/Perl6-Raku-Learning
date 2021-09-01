@@ -1,0 +1,6 @@
+première ligne
+deuxième ligne
+troisième ligne
+# commentaire*
+cinquième ligne
+sixième ligne

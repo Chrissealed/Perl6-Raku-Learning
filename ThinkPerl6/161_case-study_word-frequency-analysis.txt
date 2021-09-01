@@ -1,0 +1,6 @@
+Word Frequency Analysis
+
+Now, let’s get to the case study.
+As usual, you should at least attempt the exercises before you read the suggested solu‐
+tions, which are provided in the following sections of this chapter.
+

@@ -1,0 +1,66 @@
+8 - Conclusion
+
+Nous avons fait un bref tour d'horizon de la syntaxe de base de Perl 6 et avons aussi essayé de présenter quelques-
+unes des caractéristiques (fonctions multiples, création de nouveaux opérateurs, etc.) qui le rendent particulièrement
+puissant et expressif.
+Parmi celles que nous n'avons pas pu décrire faute de place, Perl 6 offre en particulier :
+
+• un nouveau système de programmation orientée objet particulièrement flexible, puissant et expressif, doté
+de classes, de méthodes et de rôles, la possibilité de créer facilement de nouveaux types, une introspection
+approfondie et une couche métaobjet permettant de modifier dynamiquement le comportement des objets et
+des classes ;
+
+• un système d'expressions régulières nettoyé et refondu, rendu plus lisible et modulaire grâce aux regex
+nommées qui sont en quelque sorte des briques permettant de construire des expressions régulières bien
+plus puissantes tout en étant plus lisibles, et débouchant sur la création de véritables grammaires permettant
+l'analyse lexicale et syntaxique non seulement de texte HTML, JSON, XML, etc., mais aussi de langages
+de programmation : la grammaire utilisée par Perl 6 pour analyser les programmes Perl 6 est elle-même
+écrite en Perl 6, et il est même possible dans un programme ou un module d'ajouter de nouveaux éléments
+syntaxiques à la grammaire Perl 6 existante, ce qui rend le langage intrinsèquement malléable et évolutif ;
+
+• un modèle de programmation fonctionnelle très enrichi, avec en natif le support aux listes paresseuses,
+la programmation en pipe-line, les fonctions d'ordre supérieur, les itérateurs, les hyperopérateurs, les
+fermetures, les lambdas, la curryfication, etc.
+
+• un support exceptionnellement efficace à l'Unicode, probablement sans égal actuellement ;
+
+• un modèle de programmation parallèle, concurrente et asynchrone de haut niveau, bien plus puissant
+et expressif que les threads, sémaphores et verrous, fiable, robuste, facile à utiliser et extrêmement
+prometteur, s'ajoutant à la possibilité d'utilisation implicite par le compilateur de threads utilisant différents
+cores d'un processeur pour traiter des données en parallèle, ainsi qu'un support natif à la programmation
+événementielle.
+
+• un support natif à des structures de données multidimensionnelles de plus bas niveau (matrices, etc.)
+permettant d'envisager du calcul scientifique intensif ;
+
+• un interfaçage particulièrement simple avec des bibliothèques C/C++, Java ou autres, ainsi qu'avec les
+anciennes versions de Perl, ce qui permet l'utilisation de modules Perl 5 en Perl 6 (ou l'inverse) et ouvre
+donc la voie à l'utilisation des modules Perl 5 du CPAN, l'une des plus vastes collections de bibliothèques
+logicielles libres au monde.
+
+La liste ci-dessus pourrait se poursuivre sur plusieurs pages, mais nous nous arrêterons là pour éviter de lasser le
+lecteur.
+
+Tout cela fait de Perl 6 un langage exceptionnellement expressif et intrinsèquement malléable ; même ce qui n'existe
+pas dans le langage, vous pouvez presque toujours le créer dynamiquement à la demande.
+Tout n'est pas encore parfait pour autant. Les performances d'exécution se sont considérablement améliorées
+depuis un an, mais elles laissent encore un peu à désirer dans certains cas. Les macros avancées ne sont pas
+encore implémentées et deux ou trois autres fonctionnalités initialement prévues (comme les entrées/sorties non
+bloquantes) sont encore incomplètement mises en œuvre. Quelques progrès sont donc encore nécessaires (et
+font l'objet de travaux intensifs), mais Perl 6 offre d'ores et déjà une palette de fonctionnalités que nous pensons
+très largement inégalée, même parmi les langages récents bénéficiant des ressources incomparablement plus
+abondantes d'entreprises richissimes comme Google, Apple, Microsoft, Oracle et quelques autres géants du Nasdaq.
+
+Pour aller plus loin
+
+• Le site de téléchargement de Rakudo Star / Perl 6 : http://rakudo.org/downloads/star/.
+• La documentation officielle (en anglais) sur Perl 6 est disponible à l'adresse suivante :
+doc.perl6.org.
+• Plusieurs articles et tutoriels en français sont en ligne sur ce site à l'adresse suivante :
+http://perl.developpez.com/cours/#TutorielsPerl6.
+• Le site des Mongueurs de Perl fournit des liens complémentaires : http://
+mongueurs.pm/ressources/ref_perl6.html.
+• Mon livre sur Perl 6 (en anglais, publié en version papier chez O'Reilly Media et
+disponible au téléchargement gratuit au format PDF) : Think Perl 6, how to think like
+a computer scientist.
+

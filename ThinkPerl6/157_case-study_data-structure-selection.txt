@@ -1,0 +1,11 @@
+CHAPTER 11
+
+Case Study: Data Structure Selection
+
+At this point you have learned about Perl’s core data structures, and you have seen
+some of the algorithms that use them.
+This chapter presents a case study with exercises that let you think about choosing
+data structures and practice using them.
+But first, I would like to briefly introduce two conditional structures that have been
+left aside so far and provide a couple of new possibilities about subroutine signatures.
+

@@ -1,0 +1,88 @@
+# Debugging
+#
+# When you use indices to traverse the values in a sequence, it is tricky to get the begin‐
+# ning and end of the traversal right. Here is a subroutine that is supposed to compare
+# two words and return True if one of the words is the reverse of the other, but it con‐
+# tains two errors:
+# # ATTENTION, watch out: code with errors
+#
+# sub is-reverse(Str $word1, Str $word2) {
+    # return False if $word1.chars != $word2.chars;
+    # my $i = 0;
+    # my $j = $word2.chars;
+    # while $j > 0 {
+        # return False if substr($word1, $i, 1) ne substr($word1, $j, 1);
+        # $i++; $j--;
+    # }
+    # return True;
+# }
+# say is-reverse "pots", "stop";
+#
+# The first postfix if statement checks whether the words are the same length. If not,
+# we can return False immediately. Otherwise, for the rest of the subroutine, we can
+# assume that the words are the same length. This is an example of the guardian pattern
+# described in “Checking Types” on page 87 .
+#
+# $i and $j are indices: $i traverses $word1 forward while $j traverses $word2 back‐
+# ward. If we find two letters that don’t match, we can return False immediately. If we
+# get through the whole loop and all the letters match, we return True.
+# If we test this function with the words “stop” and “pots”, we expect the return value
+# True, but we get False instead. So, what’s wrong here?
+# With this kind of code, the usual suspect is a possible blunder in the management of
+# indices (especially perhaps an off-by-one error). For debugging this kind of error, the
+# first move might be to print the values of the indices immediately before the line
+# where they are used:
+#
+# sub is-reverse(Str $word1, Str $word2) {
+    # return False if $word1.chars != $word2.chars;
+    # my $i = 0;
+    # my $j = $word2.chars;
+    # while $j > 0 {
+        # say '$i = ', $i, ' $j = ', $j;
+        # return False if substr($word1, $i, 1) ne substr($word1, $j, 1);
+        # $i++; $j--;
+    # }
+    # return True;
+# }
+# Now when we run the program again, we get more information:
+# $i = 0 $j = 4
+# False
+#
+# The first time through the loop, the value of $j is 4, which is out of range for the
+# string 'pots'. The index of the last character is 3, so the initial value for $j should be
+# $word2.chars - 1.
+# 
+# Note that in the event that this was still not enough for us to spot the out-of-range
+# error, we could have gone one step further and printed the letters themselves, and we
+# would have seen that we did not get the last letter of the second word.
+#
+# If we fix that error and run the program again, we get:
+# $i = 0 $j = 3
+# $i = 1 $j = 2
+# $i = 2 $j = 1
+# True
+#
+# This time we get the right answer, but it looks like the loop only ran three times,
+# which is suspicious: it seems that the program did not compare the last letter of the
+# first word (indexed $i = 3) with the last letter of the second word (indexed $j = 0).
+# We can confirm this by running the subroutine with the following arguments: “stop”
+# and “lots”, which displays:
+#
+# $i = 0 $j = 3
+# $i = 1 $j = 2
+# $i = 2 $j = 1
+# True
+#
+# This is obviously wrong, as “lots” is not the reverse of “stop”; the subroutine should
+# return False. So we have another bug here.
+# To get a better idea of what is happening, it is useful to draw a state diagram. During
+# the first iteration, the frame for is_reverse is shown in Figure 7-1.
+#
+# Figure 7-1. State diagram
+#
+# We took some license by arranging the variables in the frame and adding dotted lines
+# to show that the values of $i and $j indicate characters in $word1 and $word2 .
+# Starting with this diagram, run the program on paper, changing the values of $i and
+# $j during each iteration. Find and fix the second error in this function. (Solution:
+# “Exercise: is-reverse Subroutine” on page 372.)
+

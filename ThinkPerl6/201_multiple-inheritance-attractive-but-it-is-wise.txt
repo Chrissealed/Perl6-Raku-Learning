@@ -1,0 +1,38 @@
+Multiple Inheritance: Attractive, but Is It Wise?
+
+In object-oriented programming, the inheritance mechanism is a traditional way to
+reuse code; it is even probably the most common way to do it.
+A class may have several parent classes and, thus, subclass several other classes. This
+is what is called multiple inheritance. We might want to build a new MovablePixel
+class inheriting from both MovablePoint and Pixel (and, indirectly, from Point2D ).
+
+Technically, you can easily do it in Perl:
+
+class MovablePixel is MovablePoint is Pixel {
+# ...
+}
+
+Now, MovablePixel is subclassing both MovablePoint and Pixel and inheriting from
+both parent classes.
+
+This looks very promising, but it turns out to be more complicated than expected in
+real situations. If there is a conflict (for example a name collision between two meth‐
+ods), which one shall prevail? Some mechanisms exist to handle such situations (for
+example in the C++ programming language), and Perl has some metaobject methods
+to find out about the method resolution order (MRO), but this might quickly leads to
+severe design problems and to really subtle or complicated bugs. In short, while mul‐
+tiple inheritance originally looked as a attractive idea, it turned out to be complicated
+to master, because it creates multiple and often implicit dependencies that are quite
+hard to sort out.
+
+This is the reason why, contrary to C++, relatively more recent OO programming
+languages such as Java (which came out not so recently, back in 1995) have decided
+not to implement multiple inheritance.
+
+Perl 6 does not want to forbid such things and allows you to use multiple inheritance
+if you wish, and it can be useful for simple cases; so don’t necessarily rule it out, but
+remember that, contrary to early expectations, it often leads to a mess and turns out
+to be quite unmanageable.
+
+Perl offers better concepts for tackling such situations, as we will see shortly.
+

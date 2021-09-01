@@ -1,0 +1,12 @@
+.precomp/
+tmp/
+*~
+*.bak
+*.code-workspace
+*.log
+*.o
+*.ppu
+*.swo
+*.swp
+*.vim
+*.zip
