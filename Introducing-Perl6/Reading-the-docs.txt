@@ -1,0 +1,107 @@
+»ö« Perl 6 Documentation <https://docs.perl6.org/>
+
+Not in Index (try site search)
+*Perl 6 homepage* <https://perl6.org/> Language
+<https://docs.perl6.org/language.html> Types
+<https://docs.perl6.org/type.html> Routines
+<https://docs.perl6.org/routine.html> Programs
+<https://docs.perl6.org/programs.html> Chat with us
+<https://webchat.freenode.net/?channels=#perl6>
+
+
+  Reading the docs
+
+p6doc - the Perl 6 pod reader
+
+
+    Table of Contents§ <#TOC_Title>
+
+1	INTRODUCTION <#INTRODUCTION>
+2	SYNOPSIS <#SYNOPSIS>
+3	DESCRIPTION <#DESCRIPTION>
+4	LIMITATIONS <#LIMITATIONS>
+
+
+  <#___top>INTRODUCTION§ <#INTRODUCTION>
+
+Program |p6doc| is a command-line-interface (CLI) program that reads
+Perl 6 pod from *installed* modules' source code, in contrast to running
+|perl6 --doc=MODULE programfile| which reads Perl 6 pod from the named
+source file.
+
+Note that |p6doc| may not be installed automatically depending upon how
+you installed Rakudo Perl 6. To install it use |zef|:
+
+zef install p6doc
+
+
+  SYNOPSIS <#___top>§ <#SYNOPSIS>
+
+p6doc [switches] [arguments]
+
+
+  DESCRIPTION <#___top>§ <#DESCRIPTION>
+
+With no switches or arguments, |p6doc| lists its help to |$*OUT| (|stdout|):
+
+You want to maintain the index?
+To build an index for 'p6doc -f'
+          p6doc build
+ 
+To list the index keys
+          p6doc list
+ 
+To display module name(s) containing key
+          p6doc lookup
+ 
+To show where the index file lives
+          p6doc path-to-index
+ 
+What documentation do you want to read?
+Examples: p6doc Str
+          p6doc Str.split
+          p6doc faq
+          p6doc path/to/file
+ 
+You can list some top level documents:
+          p6doc -l
+ 
+You can also look up specific method/routine/sub definitions:
+          p6doc -f hyper
+          p6doc -f Array.push
+ 
+You can bypass the pager and print straight to stdout:
+          p6doc -n Str
+
+The text output can be captured and converted to other forms if desired.
+
+If you want to use ANSI escape sequences, which will apply boldface and
+other enhancements to the output, you will have to set POD_TO_TEXT_ANSI,
+which is unset by default
+
+export POD_TO_TEXT_ANSI=1
+
+
+  LIMITATIONS <#___top>§ <#LIMITATIONS>
+
+Currently |p6doc| can only extract embedded Perl 6 pod from installed
+module source files (as listed in a distribution's |META6.json| file).
+It is planned to add a feature for |p6doc| (in conjunction with
+|META6.json| changes) to extract *all* Perl 6 pod in files included with
+the installed distribution.
+
+Generated from /programs/02-reading-docs
+<https://github.com/perl6/doc/blob/master/doc/Programs/02-reading-docs.pod6>.[Debug:
+off]
+
+This is a work in progress to document Perl 6, and known to be incomplete.
+
+Please report any issues
+<https://github.com/perl6/doc/blob/master/CONTRIBUTING.md#reporting-bugs> Your
+contribution is appreciated.
+
+This documentation is provided under the terms of the Artistic License
+2.0 <https://raw.githubusercontent.com/perl6/doc/master/LICENSE>. The
+Camelia image is copyright © 2009 by Larry Wall.
+<https://raw.githubusercontent.com/perl6/mu/master/misc/camelia.txt>
+
